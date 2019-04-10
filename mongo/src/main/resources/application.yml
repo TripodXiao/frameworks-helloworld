@@ -1,9 +1,8 @@
 spring:
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      username: root
-      password: root
+      username: oduser
+      password: oduser2018
+      database: ramp
       authentication-database: admin
-      database: test
+      uri: mongodb://oduser:oduser2018@10.79.177.26:27017,10.79.177.27:27017,10.79.177.28:27017/ramp

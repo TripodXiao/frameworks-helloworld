@@ -1,4 +1,4 @@
-package com.tripodxiao.frameworks.mongo;
+package com.tripodxiao.frameworks.mongo.test;
 
 import com.tripodxiao.frameworks.mongo.entity.Department;
 import com.tripodxiao.frameworks.mongo.entity.Hobby;
@@ -103,14 +103,16 @@ public class InitData {
 
 	@Test
 	public void init() throws InterruptedException {
-		long size = 10000*10000;//总需要生成的数据量
+		long size = 10*10000*10000;//总需要生成的数据量
 		int writeSize = 10*10000;//每个线程写入的数据量
 		List<Person> personList = new ArrayList<>(writeSize);
 		System.out.println("需要生成的对象数量为"+size);
-		ThreadPoolExecutor te = (ThreadPoolExecutor) Executors.newFixedThreadPool(16);
+		ThreadPoolExecutor te = (ThreadPoolExecutor) Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 		long beginId = 100000000L;
 		int count = 1;
-		for (int i=0;i<size;i++) {
+		for (long i=0;i<size;i++) {
+
+
 
 
 
